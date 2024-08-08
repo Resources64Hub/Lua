@@ -26,7 +26,7 @@ local Window = Fluent:CreateWindow({
 	Title = "WDX Hub (Version: 0.1) ",
 	SubTitle = "by MEGA_PUDARAS (Lib UI Version): " .. Fluent.Version,
 	TabWidth = 160,
-	Size = UDim2.fromOffset(400, 300),
+	Size = UDim2.fromOffset(455, 300),
 	Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
 	Theme = "Dark",
 	MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
@@ -264,7 +264,7 @@ local Slider = Tabs.LocalPlayerTab:AddSlider("Slider3", {
 	Default = 0,
 	Min = 0,
 	Max = 1,
-	Rounding = 0.1,
+	Rounding = 1,
 	
 	Callback = function(Value)
 		
