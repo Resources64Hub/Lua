@@ -79,7 +79,7 @@ local Tabs = {
 
 Fluent:Notify({
 	Title = "WDX Hub Has Starded!",
-	Content = "[Hub Version: 1.8], [Lib UI Version: " .. Fluent.Version .. " ]" ,
+	Content = "[Hub Version: 0.1], [Lib UI Version: " .. Fluent.Version .. " ]" ,
 	SubContent = "SubContent", -- Optional
 	Duration = 5 -- Set to nil to make the notification not disappear
 })
@@ -146,7 +146,7 @@ local Toggle1 = Tabs.SexTab:AddToggle("MyToggleww", {Title = "Minet [R6]", Defau
 
 Toggle1:OnChanged(function()
 	
-	if Options.MyToggle.Value == true then
+	if Options.MyToggleww.Value == true then
 		
 		local Hum = Player.Character:WaitForChild("Humanoid", 15)
 		local anim2 = Hum:LoadAnimation(Minetr6)
@@ -494,3 +494,6 @@ Fluent:Notify({
 })
 
 warn("WDX Hub Has been Loaded")
+
+
+
