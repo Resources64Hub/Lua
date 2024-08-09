@@ -79,7 +79,7 @@ local Tabs = {
 
 Fluent:Notify({
 	Title = "WDX Hub Has Starded!",
-	Content = "[Hub Version: 0.1], [Lib UI Version: " .. Fluent.Version .. " ]" ,
+	Content = "[Hub Version: 1.8], [Lib UI Version: " .. Fluent.Version .. " ]" ,
 	SubContent = "SubContent", -- Optional
 	Duration = 5 -- Set to nil to make the notification not disappear
 })
