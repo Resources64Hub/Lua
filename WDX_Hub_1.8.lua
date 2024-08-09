@@ -36,7 +36,7 @@ Seksr6.Name = "OOOO_Seks_".. math.random(0,999999999).. "R6_".. math.random(0,99
 Seksr15.Name = "OOOO_Seks_".. math.random(0,999999999).. "R15_".. math.random(0,9999999)
 
 local Window = Fluent:CreateWindow({
-	Title = "WDX Hub (Version: 0.1) ",
+	Title = "WDX Hub (Version: 1.8) ",
 	SubTitle = "by MEGA_PUDARAS (Lib UI Version): " .. Fluent.Version,
 	TabWidth = 160,
 	Size = UDim2.fromOffset(580, 460),
