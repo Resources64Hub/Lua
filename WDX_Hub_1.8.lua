@@ -453,10 +453,12 @@ Toggle56:OnChanged(function()
 		
 		StartCharPosition = char:WaitForChild("HumanoidRootPart", 15).Position
 		char:WaitForChild("HumanoidRootPart", 15).Position = Vector3.new(7380.598, 7348.319, -20636.758)
+		char:WaitForChild("HumanoidRootPart", 15).Anchored = true
 		
 	elseif Options.MyToggle45de.Value == false then
 		
 		char:WaitForChild("HumanoidRootPart", 15).Position = Vector3.new(StartCharPosition)
+		char:WaitForChild("HumanoidRootPart", 15).Anchored = false
 		
 	end
 	
@@ -493,7 +495,6 @@ Fluent:Notify({
 	Duration = 8
 })
 
+
+
 warn("WDX Hub Has been Loaded")
-
-
-
