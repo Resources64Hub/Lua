@@ -23,7 +23,7 @@ Seksr6.AnimationId = "rbxassetid://18853849173"
 Seksr15.AnimationId = "rbxassetid://18853770420"
 
 local Window = Fluent:CreateWindow({
-	Title = "WDX Hub (Version: 0.1) ",
+	Title = "WDX Hub (Version: 1.5) ",
 	SubTitle = "by MEGA_PUDARAS (Lib UI Version): " .. Fluent.Version,
 	TabWidth = 160,
 	Size = UDim2.fromOffset(470, 300),
@@ -268,7 +268,7 @@ local Slider = Tabs.LocalPlayerTab:AddSlider("Slider3", {
 	
 	Callback = function(Value)
 		
-		for _, BP in ipairs(Player.Character:GetChildren()) do
+		for _, BP in pairs(Player.Character:GetChildren()) do
 			
 			if BP:IsA("Part") or BP:IsA("MeshPart") or BP:IsA("UnionOperation") then
 				
