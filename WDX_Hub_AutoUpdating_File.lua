@@ -1,5 +1,7 @@
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local Options = Fluent.Options
+local WDX_HUB_VERSION = "2.3"
+
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 
@@ -45,7 +47,7 @@ Seksr6.Name = "OOOO_Seks_".. math.random(0,999999999).. "R6_".. math.random(0,99
 Seksr15.Name = "OOOO_Seks_".. math.random(0,999999999).. "R15_".. math.random(0,9999999)
 
 local Window = Fluent:CreateWindow({
-	Title = "WDX Hub (Version: 2.2) ",
+	Title = "WDX Hub ("..WDX_HUB_VERSION..")",
 	SubTitle = "by MEGA_PUDARAS (Lib UI Version): " .. Fluent.Version,
 	TabWidth = 160,
 	Size = UDim2.fromOffset(580, 460),
@@ -90,7 +92,7 @@ local Tabs = {
 
 Fluent:Notify({
 	Title = "WDX Hub Has Starded!",
-	Content = "[Hub Version: 2.2], [Lib UI Version: " .. Fluent.Version .. " ]" ,
+	Content = "[Hub Version: "..WDX_HUB_VERSION.."]"..", [Lib UI Version: " .. Fluent.Version .. " ]" ,
 	SubContent = "Please wait until the WDX Hub is fully loaded", -- Optional
 	Duration = 5 -- Set to nil to make the notification not disappear
 })
@@ -578,7 +580,7 @@ Tabs.WorkSpaceTab:AddParagraph({
 
 local Input = Tabs.WorkSpaceTab:AddInput("Input", {
 	Title = "Sky Id",
-	Default = "",
+	Default = LightC:FindFirstChild("Sky").StarCount,
 	Placeholder = "Insert the Skybox ID here",
 	Numeric = false, -- Only allows numbers
 	Finished = true, -- Only calls callback when you press enter
@@ -601,8 +603,8 @@ Input:OnChanged(function()
 	print("Input updated:", Input.Value)
 end)
 
-local Input2 = Tabs.WorkSpaceTab:AddInput("Input", {
-	Title = "StarCount",
+local Input2 = Tabs.WorkSpaceTab:AddInput("Input2", {
+	Title = "Star Count",
 	Default = "",
 	Placeholder = "Insert here the number of stars you want to see in the sky",
 	Numeric = true, -- Only allows numbers
@@ -618,7 +620,31 @@ local Input2 = Tabs.WorkSpaceTab:AddInput("Input", {
 })
 
 Input2:OnChanged(function()
-	print("Input updated:", Input.Value)
+	print("Input updated:", Input2.Value)
+end)
+
+local Input3 = Tabs.WorkSpaceTab:AddInput("Input3", {
+	Title = "Gravity",
+	Default = WorkspaceC.Gravity,
+	Placeholder = "The Number of Gravity Forces",
+	Numeric = false, -- Only allows numbers
+	Finished = true, -- Only calls callback when you press enter
+	Callback = function(Value)
+		print("Input changed:", Value)
+		
+		WorkspaceC.Gravity = Value
+		
+		Fluent:Notify({
+			Title = "WDX Hub",
+			Content = "The Force Of Gravity Has Been Changed.",
+			Duration = 5
+		})
+		
+	end
+})
+
+Input:OnChanged(function()
+	print("Input updated:", Input3.Value)
 end)
 
 Fluent:Notify({
