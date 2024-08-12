@@ -27,16 +27,16 @@ CharLights.Color = Color3.fromRGB(255, 255, 255)
 local SaveSpeed
 local SaveJumpPower
 
-local Minetr15 = Instance.new("Animation", Player.Character:WaitForChild("HumanoidRootPart"))
-local Minetr6 = Instance.new("Animation", Player.Character:WaitForChild("HumanoidRootPart"))
-local Seksr6 = Instance.new("Animation", Player.Character:WaitForChild("HumanoidRootPart"))
-local Seksr15 = Instance.new("Animation", Player.Character:WaitForChild("HumanoidRootPart"))
+local Minetr15 = Instance.new("Animation")
+local Minetr6 = Instance.new("Animation")
+local Seksr6 = Instance.new("Animation")
+local Seksr15 = Instance.new("Animation")
 
 Minetr15.AnimationId = "rbxassetid://18853685148"
 Minetr6.AnimationId = "rbxassetid://18853621949"
 
-Seksr6.AnimationId = "rbxassetid://18853849173"
-Seksr15.AnimationId = "rbxassetid://18853770420"
+Seksr6.AnimationId = "rbxassetid://148840371"
+Seksr15.AnimationId = "rbxassetid://742638445"
 
 Minetr6.Name = "OOOO_Minet_".. math.random(0,999999999).. "R6_".. math.random(0,9999999)
 Minetr6.Name = "OOOO_Minet_".. math.random(0,999999999).. "R15_".. math.random(0,9999999)
@@ -508,13 +508,13 @@ Toggle56:OnChanged(function()
 
 end)
 
-local Toggle = Tabs.LocalPlayerTab:AddToggle("MyToggleew", {Title = "Toggle", Default = false })
+local Toggle = Tabs.LocalPlayerTab:AddToggle("MyToggleew", {Title = "Hide Display Name", Default = false })
 
 Toggle:OnChanged(function()
 	print("Toggle changed:", Options.MyToggleew.Value)
 	
 	local Char = Player.Character
-	local Hum = Char.WaitForChild("Humanoid")
+	local Hum = Char:WaitForChild("Humanoid")
 	
 	if Options.MyToggleew.Value == true then
 		
