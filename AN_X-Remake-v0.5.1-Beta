@@ -243,7 +243,6 @@ Commands.fuck = function(r, Arg)
 				C:WaitForChild'HumanoidRootPart'.CFrame=CFrame.new(game:GetService'Players':FindFirstChild(Victim).Character:WaitForChild'HumanoidRootPart'.Position)
 			end
 	end)
-	return Commands.fuck
 end
 
 Commands.stopfuck = function()
@@ -270,18 +269,9 @@ Commands.follow = function(Sender, Arg)
 	end)
 end
 
-Commands.fling = function(Sender, Arg)
-	local function FindPlayer()
-		for _, Player in pairs(game.Players:GetPlayers()) do
-			if string.lower(Player.Name) == Arg[1] then
-				return Player
-			end
-		end
-	end
-	
-Commands.script2life = function()
+Commands.script2life = function(Sender)
 		task.spawn(function()
-			local targetPlayerName = "HacTR101213"
+			local targetPlayerName = Players.LocalPlayer.Name
 			local invincibleHealth = 1e9
 
 			local localchar = script.Parent
@@ -334,6 +324,14 @@ Commands.script2life = function()
 		end)
 end
 
+Commands.fling = function(Sender, Arg)
+	local function FindPlayer()
+		for _, Player in pairs(game.Players:GetPlayers()) do
+			if string.lower(Player.Name) == Arg[1] then
+				return Player
+			end
+		end
+	end
 	-- Settings
 
 	-- Objects
