@@ -1,0 +1,352 @@
+-- Gui to Lua
+-- Version: 3.2
+
+--Variables:
+
+local Admins = {
+	game.Players.LocalPlayer.Name
+}
+local Prefix = "!"
+local Players= game:GetService("Players")
+local Commands = {}
+
+--Scripts Variables:
+
+local A=Instance.new'Animation'
+local P=game:GetService'Players'.LocalPlayer
+local C=P.Character or P.CharacterAdded:Wait()
+A.AnimationId='rbxassetid://148840371'
+local H=C:WaitForChild'Humanoid':LoadAnimation(A)
+local fuckEnabled = false
+
+-- Instances:
+
+local AN_XGUIREMAKE = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Input = Instance.new("TextBox")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local UIStroke = Instance.new('UIStroke')
+local animations = Instance.new('Folder')
+local notify = Instance.new("Frame")
+local UiGradient_n = Instance.new("UIGradient")
+local Frame_n = Instance.new("Frame")
+local title_n = Instance.new("TextLabel")
+local TextLabel_n = Instance.new("TextLabel")
+local NotifyFolder = Instance.new('Folder')
+
+--Services:
+
+local tweens = game:GetService('TweenService')
+
+--Properties:
+
+AN_XGUIREMAKE.Name = "AN_X-GUI [REMAKE]"
+AN_XGUIREMAKE.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+AN_XGUIREMAKE.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = AN_XGUIREMAKE
+Frame.BackgroundColor3 = Color3.fromRGB(156, 156, 156)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.0206896551, 0, 0.840085268, 0)
+Frame.Size = UDim2.new(0, 817, 0, 52)
+
+Input.Name = "Input"
+Input.Parent = Frame
+Input.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Input.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Input.BorderSizePixel = 0
+Input.Position = UDim2.new(0, 0, 0.634615362, 0)
+Input.Size = UDim2.new(0, 817, 0, 19)
+Input.Font = Enum.Font.SourceSansBold
+Input.Text = ""
+Input.TextColor3 = Color3.fromRGB(255, 255, 255)
+Input.TextScaled = true
+Input.TextSize = 14.000
+Input.TextWrapped = true
+Input.TextXAlignment = Enum.TextXAlignment.Left
+Input.ClearTextOnFocus = false
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0269277841, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 35, 0, 33)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "AN"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.0697674453, 0, 0, 0)
+TextLabel_2.Size = UDim2.new(0, 35, 0, 33)
+TextLabel_2.Font = Enum.Font.SourceSansBold
+TextLabel_2.Text = "_X"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0.112607099, 0, 0.403846145, 0)
+TextLabel_3.Size = UDim2.new(0, 44, 0, 11)
+TextLabel_3.Font = Enum.Font.SourceSansBold
+TextLabel_3.Text = "REMAKE"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+
+UIStroke.Thickness = 2
+UIStroke.Parent = Frame
+
+animations.Name = 'animations'
+animations.Archivable = true
+animations.Parent = AN_XGUIREMAKE
+
+notify.Name = "notify"
+notify.Parent = AN_XGUIREMAKE
+notify.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+notify.BorderColor3 = Color3.fromRGB(0, 0, 0)
+notify.BorderSizePixel = 0
+notify.Position = UDim2.new(0.905747139, 0, 0.671641767, 0)
+notify.Size = UDim2.new(0, 430, 0, 56)
+notify.Visible = false
+
+UiGradient_n.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(100, 100, 100)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UiGradient_n.Rotation = -90
+UiGradient_n.Parent = notify
+
+Frame_n.Parent = notify
+Frame_n.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Frame_n.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_n.BorderSizePixel = 0
+Frame_n.Position = UDim2.new(0, 0, 0.267857134, 0)
+Frame_n.Size = UDim2.new(0, 430, 0, 1)
+
+title_n.Name = "title_n"
+title_n.Parent = notify
+title_n.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title_n.BackgroundTransparency = 1.000
+title_n.BorderColor3 = Color3.fromRGB(0, 0, 0)
+title_n.BorderSizePixel = 0
+title_n.Size = UDim2.new(0, 430, 0, 15)
+title_n.Font = Enum.Font.SourceSansBold
+title_n.Text = "Notify title_n"
+title_n.TextColor3 = Color3.fromRGB(0, 0, 0)
+title_n.TextScaled = true
+title_n.TextSize = 14.000
+title_n.TextWrapped = true
+
+TextLabel_n.Parent = notify
+TextLabel_n.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_n.BackgroundTransparency = 1.000
+TextLabel_n.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_n.BorderSizePixel = 0
+TextLabel_n.Position = UDim2.new(0, 0, 0.285714298, 0)
+TextLabel_n.Size = UDim2.new(0, 430, 0, 40)
+TextLabel_n.Font = Enum.Font.SourceSansBold
+TextLabel_n.Text = "Hello this notify content ryaryayra yre yre yre yra yaryayra yre yre yre yrayaryayra yre yre yre yrayaryayra yre yre yre yrayaryayra yre yre yre yra"
+TextLabel_n.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_n.TextScaled = true
+TextLabel_n.TextSize = 14.000
+TextLabel_n.TextWrapped = true
+TextLabel_n.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel_n.TextYAlignment = Enum.TextYAlignment.Top
+
+NotifyFolder.Parent = AN_XGUIREMAKE
+NotifyFolder.Name = 'NotifyFolder'
+
+--Scripts Properties:
+
+
+
+--Functions:
+
+local function notify_client(notify_title, notify_content, notify_lifetime)
+	title_n.Text = notify_title
+	TextLabel_n.Text = notify_content
+
+	local tweenInfo = TweenInfo.new(1)
+	local guiInstance = notify
+
+	local xScaleSize = 0.51 -- modify this until the notification opens up to your taste. From 0 to 1.
+	local yScalePosition = 0.67 -- modify this to your taste. From 0 to 1.
+
+	local openGoal = {Position = UDim2.fromScale(xScaleSize, yScalePosition)} -- fromScale since we're only using scales.
+	local closedGoal = {Position = UDim2.fromScale(1, yScalePosition)}
+
+	local openTween = tweens:Create(guiInstance, tweenInfo, openGoal)
+	local closeTween = tweens:Create(guiInstance, tweenInfo, closedGoal)
+	notify.Visible = true
+	openTween:Play()
+	task.spawn(function()
+		task.wait(notify_lifetime) -- better than using wait()
+		closeTween:Play()
+		closeTween.Completed:Connect(function()
+			notify.Visible = false -- technically, no longer needed, but you may keep it if you wish.
+		end)
+	end)
+end
+
+task.spawn(function()
+	notify_client('Hello!', 'Thank you for using our script!', 3)
+	task.wait(6)
+	notify_client('About', 'if you encounter problems or bugs while using our script, please contact the developer in the telegram username @OpS_Tadjik', 8)
+end)
+
+Commands.print = function(Sender,Arguments)
+	local Message = table.concat(Arguments," ")
+	print("From " ..Sender.Name..":\n"..Message)
+end
+
+Commands.playanimationid = function (na, Arg)
+	local new = Instance.new('Animation', script)
+	new.AnimationId = 'rbxassetid://'..Arg[1]
+	new.Parent = animations
+	local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(new)
+	if Arg[2] then
+		track.Looped = true
+	end
+	if Arg[3] then
+		track:AdjustSpeed(Arg[3])
+	end
+	track:Play()
+	print('Playing Animation: '.. new.AnimationId..' ...')
+end
+
+Commands.fuck = function(r, Arg)
+	task.spawn(function()
+		fuckEnabled = true
+		local Victim=Arg[1]
+		H:Play()
+		H:AdjustSpeed(Arg[2])
+		game:GetService'RunService'.RenderStepped:Wait()
+			if fuckEnabled == true then
+				C:WaitForChild'HumanoidRootPart'.CFrame=CFrame.new(game:GetService'Players':FindFirstChild(Victim).Character:WaitForChild'HumanoidRootPart'.Position)
+			end
+	end)
+	return Commands.fuck
+end
+
+Commands.stopfuck = function()
+	fuckEnabled = false
+	H:Stop()
+end
+
+Commands.help = function()
+	
+end
+
+Commands.follow = function(Sender, Arg)
+	task.spawn(function()
+		local HumanoidRootPart = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart')
+		for i, p in pairs(workspace:GetChildren()) do
+			if string.lower(p.Name) == Arg[1] then
+				task.spawn(function()
+					game:GetService'RunService'.Stepped:Connect(function()
+						HumanoidRootPart.CFrame = p.HumanoidRootPart.CFrame
+					end)
+				end)
+			end
+		end
+	end)
+end
+
+Commands.fling = function(Sender, Arg)
+	local function FindPlayer()
+		for _, Player in pairs(game.Players:GetPlayers()) do
+			if string.lower(Player.Name) == Arg[1] then
+				return Player
+			end
+		end
+	end
+	-- Settings
+
+	-- Objects
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+
+	local LocalPlayer = Players.LocalPlayer
+	local Target = FindPlayer()
+
+	local BodyAngularVelocity = Instance.new("BodyAngularVelocity")
+	BodyAngularVelocity.AngularVelocity = Vector3.new(10^6, 10^6, 10^6)
+	BodyAngularVelocity.MaxTorque = Vector3.new(10^6, 10^6, 10^6)
+	BodyAngularVelocity.P = 10^6
+
+	-- Start
+	Commands.follow(nil, {Arg[1]})
+	if not Target then return end
+	BodyAngularVelocity.Parent = LocalPlayer.Character.HumanoidRootPart
+
+	while Target.Character.HumanoidRootPart and LocalPlayer.Character.HumanoidRootPart do
+		RunService.RenderStepped:Wait()
+		LocalPlayer.Character.HumanoidRootPart.CFrame = Target.Character.HumanoidRootPart.CFrame * LocalPlayer.Character.HumanoidRootPart.CFrame.Rotation
+		LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new()
+	end
+
+	BodyAngularVelocity.Parent = nil
+end
+
+local function IsAdmin(Player)
+	for _,Admin in pairs (Admins) do
+		print(Admin,Player)
+		if type(Admin) == "string" and string.lower(Admin) == string.lower(Player.Name) then
+			return true
+		elseif type(Admin) == "number" and Admin == Player.UserId then
+			return true
+		--[[elseif type(Admin) == "table" then
+			local Rank = Player:GetRankInGroup(Admin.GroupId)
+			if Rank >= (Admin.RankId or 1) then
+				return true
+			end]]
+		end
+	end
+	return false
+end
+
+local function ParseMessage(Player,Message)
+	Message = string.lower(Message)
+	local PrefixMatch = string.match(Message,"^"..Prefix)
+
+	if PrefixMatch then
+		Message = string.gsub(Message,PrefixMatch,"",1)
+		local Arguments = {}
+
+		for Argument in string.gmatch(Message,"[^%s]+") do
+			table.insert(Arguments,Argument)
+		end
+
+		local CommandName = Arguments[1]
+		table.remove(Arguments,1)
+		local CommandFunc = Commands[CommandName]
+
+		if CommandFunc ~= nil then
+			CommandFunc(Player,Arguments)
+		end
+	end
+end
+
+Input.InputEnded:Connect(function(enter)
+	if enter then
+		ParseMessage(Admins[1], Input.Text)
+	end
+end)
