@@ -243,7 +243,6 @@ Commands.fuck = function(r, Arg)
 				C:WaitForChild'HumanoidRootPart'.CFrame=CFrame.new(game:GetService'Players':FindFirstChild(Victim).Character:WaitForChild'HumanoidRootPart'.Position)
 			end
 	end)
-	return Commands.fuck
 end
 
 Commands.stopfuck = function()
@@ -268,6 +267,61 @@ Commands.follow = function(Sender, Arg)
 			end
 		end
 	end)
+end
+
+Commands.script2life = function(Sender)
+		task.spawn(function()
+			local targetPlayerName = Players.LocalPlayer.Name
+			local invincibleHealth = 1e9
+
+			local localchar = script.Parent
+
+			local function main()
+				localchar.HumanoidRootPart.Anchored = true
+				localchar.HumanoidRootPart.Rotation += Vector3.new(0,0,90)
+			end
+
+			localchar:WaitForChild('Humanoid').HealthChanged:Connect(function()
+
+				local hum = localchar:WaitForChild('Humanoid')
+				local health = hum.Health
+
+				hum.BreakJointsOnDeath = false
+
+				if health <= 10 then
+					repeat
+						wait()
+						main()
+					until hum.Health > 1
+					localchar.HumanoidRootPart.Anchored = false
+				end
+			end)
+
+			local function makeInvulnerable(player)
+				local function onCharacterAdded(character)
+					local humanoid = character:WaitForChild("Humanoid")
+					humanoid.Health = invincibleHealth
+					humanoid:GetPropertyChangedSignal("Health"):Connect(function()
+						if humanoid.Health < invincibleHealth then
+							humanoid.Health = invincibleHealth
+						end
+					end)
+				end
+
+				if player.Name == targetPlayerName then
+					player.CharacterAdded:Connect(onCharacterAdded)
+
+					if player.Character then
+						onCharacterAdded(player.Character)
+					end
+				end
+			end
+
+			game.Players.PlayerAdded:Connect(makeInvulnerable)
+			for _, player in ipairs(game.Players:GetPlayers()) do
+				makeInvulnerable(player)
+			end
+		end)
 end
 
 Commands.fling = function(Sender, Arg)
