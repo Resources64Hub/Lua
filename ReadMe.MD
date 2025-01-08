@@ -7,3 +7,4 @@ All AN_X commands:
 
 !follow Arg[1] -- Chasing the designated player Arg[1] - Target USERNAME! ... Command Example: !follow Tajikiar
 
+Right now I'm too lazy to write all the commands, and no one will see this little project anyway.
