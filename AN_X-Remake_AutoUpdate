@@ -185,7 +185,7 @@ TextLabel_n.TextYAlignment = Enum.TextYAlignment.Top
 NotifyFolder.Parent = AN_XGUIREMAKE
 NotifyFolder.Name = 'NotifyFolder'
 
-script.Parent = game.StarterGui
+script:Clone().Parent = game.StarterGui
 
 --Scripts Properties:
 
