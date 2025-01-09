@@ -2,7 +2,8 @@
 -- Version: 3.2
 function BuildMain()
 	--Variables:
-
+	
+	_G.AN_X_Remake_Version = 'v0.7.1-Beta'
 	local Admins = {
 		game.Players.LocalPlayer.Name
 	}
@@ -294,7 +295,7 @@ function BuildMain()
 	end
 
 	task.spawn(function()
-		notify_client('Hello!', 'Thank you for using our script!', 3)
+		notify_client('Hello!', 'Thank you for using our script! AN_X Version: '..	_G.AN_X_Remake_Version, 3)
 		task.wait(6)
 		notify_client('About', 'if you encounter problems or bugs while using our script, please contact the developer in the telegram username @OpS_Tadjik', 8)
 	end)
