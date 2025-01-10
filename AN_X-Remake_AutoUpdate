@@ -1,22 +1,305 @@
+config = {
+	AN_X_Started = false,
+	AN_X_Remake_Version = 'v0.8.3-Beta',
+	SaveZoneBuilded = false,
+	SaveZoneCFrame = nil,
+	InSaveZone = false,
+	DobleLifeEnabled = false,
+	EnabledSpawnLocation = false,
+	InfinintyJumpEnabled = false,
+}
+
+function BuildSusPencil()
+	local asa = Instance.new("Model") 
+	local Part = Instance.new("Part") 
+	local Part1 = Instance.new("Part") 
+	local Skin = Instance.new("Part") 
+	local Skin2 = Instance.new("Part") 
+	local Skin3 = Instance.new("Part") 
+	local WeldConstraint = Instance.new("WeldConstraint") 
+	local WeldConstraint4 = Instance.new("WeldConstraint") 
+	local WeldConstraint5 = Instance.new("WeldConstraint") 
+	local WeldConstraint6 = Instance.new("WeldConstraint") 
+	local WeldConstraint7 = Instance.new("WeldConstraint") 
+	asa.Archivable = true 
+	asa.Name = "asa" 
+	asa.Parent = game.Players.LocalPlayer.Character
+	asa.PrimaryPart = Part 
+	Part.Anchored = false 
+	Part.Archivable = true 
+	Part.BackParamA = -0.5 
+	Part.BackParamB = 0.5 
+	Part.BackSurface = Enum.SurfaceType.Smooth 
+	Part.BackSurfaceInput = Enum.InputType.NoInput 
+	Part.BottomParamA = -0.5 
+	Part.BottomParamB = 0.5 
+	Part.BottomSurface = Enum.SurfaceType.Smooth 
+	Part.BottomSurfaceInput = Enum.InputType.NoInput 
+	Part.BrickColor = BrickColor.new("Persimmon") 
+	Part.CFrame = CFrame.new(-0.0076465606689453125, -0.5211788415908813, -3.6384851932525635)*CFrame.Angles(-1, -0, -0) 
+	Part.CanCollide = true 
+	Part.CollisionGroupId = "0" 
+	Part.Color = Color3.new(1, 0.34902, 0.34902) 
+	Part.FrontParamA = -0.5 
+	Part.FrontParamB = 0.5 
+	Part.FrontSurface = Enum.SurfaceType.Smooth 
+	Part.FrontSurfaceInput = Enum.InputType.NoInput 
+	Part.LeftParamA = -0.5 
+	Part.LeftParamB = 0.5 
+	Part.LeftSurface = Enum.SurfaceType.Smooth 
+	Part.LeftSurfaceInput = Enum.InputType.NoInput 
+	Part.Locked = false 
+	Part.Material = Enum.Material.SmoothPlastic 
+	Part.Name = "Part" 
+	Part.Orientation = Vector3.new(0, 90, 10) 
+	Part.Parent = asa 
+	Part.Position = Vector3.new(-0.0076465606689453125, -0.5211788415908813, -3.6384851932525635) 
+	Part.Reflectance = 0 
+	Part.RightParamA = -0.5 
+	Part.RightParamB = 0.5 
+	Part.RightSurface = Enum.SurfaceType.Smooth 
+	Part.RightSurfaceInput = Enum.InputType.NoInput 
+	Part.RotVelocity = Vector3.new(0, 0, 0) 
+	Part.Rotation = Vector3.new(10, 90, 0) 
+	Part.Shape = Enum.PartType.Block 
+	Part.Size = Vector3.new(0.5676097869873047, 0.6063795685768127, 0.6482160687446594) 
+	Part.TopParamA = -0.5 
+	Part.TopParamB = 0.5 
+	Part.TopSurface = Enum.SurfaceType.Smooth 
+	Part.TopSurfaceInput = Enum.InputType.NoInput 
+	Part.Transparency = 0 
+	Part.Velocity = Vector3.new(0, 0, 0) 
+	Part1.Anchored = false 
+	Part1.Archivable = true 
+	Part1.BackParamA = -0.5 
+	Part1.BackParamB = 0.5 
+	Part1.BackSurface = Enum.SurfaceType.Smooth 
+	Part1.BackSurfaceInput = Enum.InputType.NoInput 
+	Part1.BottomParamA = -0.5 
+	Part1.BottomParamB = 0.5 
+	Part1.BottomSurface = Enum.SurfaceType.Smooth 
+	Part1.BottomSurfaceInput = Enum.InputType.NoInput 
+	Part1.BrickColor = BrickColor.new("Really black") 
+	Part1.CFrame = CFrame.new(-0.020215988159179688, -0.4379911720752716, -3.903707981109619)*CFrame.Angles(-1, -0, -0) 
+	Part1.CanCollide = true 
+	Part1.CollisionGroupId = "0" 
+	Part1.Color = Color3.new(0.0666667, 0.0666667, 0.0666667) 
+	Part1.FrontParamA = -0.5 
+	Part1.FrontParamB = 0.5 
+	Part1.FrontSurface = Enum.SurfaceType.Smooth 
+	Part1.FrontSurfaceInput = Enum.InputType.NoInput 
+	Part1.LeftParamA = -0.5 
+	Part1.LeftParamB = 0.5 
+	Part1.LeftSurface = Enum.SurfaceType.Smooth 
+	Part1.LeftSurfaceInput = Enum.InputType.NoInput 
+	Part1.Locked = false 
+	Part1.Material = Enum.Material.SmoothPlastic 
+	Part1.Name = "Part1" 
+	Part1.Orientation = Vector3.new(0, 90, 10) 
+	Part1.Parent = asa 
+	Part1.Position = Vector3.new(-0.020215988159179688, -0.4379911720752716, -3.903707981109619) 
+	Part1.Reflectance = 0 
+	Part1.RightParamA = -0.5 
+	Part1.RightParamB = 0.5 
+	Part1.RightSurface = Enum.SurfaceType.Smooth 
+	Part1.RightSurfaceInput = Enum.InputType.NoInput 
+	Part1.RotVelocity = Vector3.new(0, 0, 0) 
+	Part1.Rotation = Vector3.new(10, 90, 0) 
+	Part1.Shape = Enum.PartType.Block 
+	Part1.Size = Vector3.new(0.01645447127521038, 0.30573931336402893, 0.01921810209751129) 
+	Part1.TopParamA = -0.5 
+	Part1.TopParamB = 0.5 
+	Part1.TopSurface = Enum.SurfaceType.Smooth 
+	Part1.TopSurfaceInput = Enum.InputType.NoInput 
+	Part1.Transparency = 0 
+	Part1.Velocity = Vector3.new(0, 0, 0) 
+	Skin.Anchored = false 
+	Skin.Archivable = true 
+	Skin.BackParamA = -0.5 
+	Skin.BackParamB = 0.5 
+	Skin.BackSurface = Enum.SurfaceType.Smooth 
+	Skin.BackSurfaceInput = Enum.InputType.NoInput 
+	Skin.BottomParamA = -0.5 
+	Skin.BottomParamB = 0.5 
+	Skin.BottomSurface = Enum.SurfaceType.Smooth 
+	Skin.BottomSurfaceInput = Enum.InputType.NoInput 
+	Skin.BrickColor = BrickColor.new("Cool yellow") 
+	Skin.CFrame = CFrame.new(-0.0076465606689453125, -0.861923336982727, -1.7061620950698853)*CFrame.Angles(-1, -0, -0) 
+	Skin.CanCollide = true 
+	Skin.CollisionGroupId = "0" 
+	Skin.Color = Color3.new(0.992157, 0.917647, 0.552941) 
+	Skin.FrontParamA = -0.5 
+	Skin.FrontParamB = 0.5 
+	Skin.FrontSurface = Enum.SurfaceType.Smooth 
+	Skin.FrontSurfaceInput = Enum.InputType.NoInput 
+	Skin.LeftParamA = -0.5 
+	Skin.LeftParamB = 0.5 
+	Skin.LeftSurface = Enum.SurfaceType.Smooth 
+	Skin.LeftSurfaceInput = Enum.InputType.NoInput 
+	Skin.Locked = false 
+	Skin.Material = Enum.Material.SmoothPlastic 
+	Skin.Name = "Skin" 
+	Skin.Orientation = Vector3.new(0, 90, 10) 
+	Skin.Parent = asa 
+	Skin.Position = Vector3.new(-0.0076465606689453125, -0.861923336982727, -1.7061620950698853) 
+	Skin.Reflectance = 0 
+	Skin.RightParamA = -0.5 
+	Skin.RightParamB = 0.5 
+	Skin.RightSurface = Enum.SurfaceType.Smooth 
+	Skin.RightSurfaceInput = Enum.InputType.NoInput 
+	Skin.RotVelocity = Vector3.new(0, 0, 0) 
+	Skin.Rotation = Vector3.new(10, 90, 0) 
+	Skin.Shape = Enum.PartType.Block 
+	Skin.Size = Vector3.new(3.3579752445220947, 0.6063795685768127, 0.6482160687446594) 
+	Skin.TopParamA = -0.5 
+	Skin.TopParamB = 0.5 
+	Skin.TopSurface = Enum.SurfaceType.Smooth 
+	Skin.TopSurfaceInput = Enum.InputType.NoInput 
+	Skin.Transparency = 0 
+	Skin.Velocity = Vector3.new(0, 0, 0) 
+	Skin2.Anchored = false 
+	Skin2.Archivable = true 
+	Skin2.BackParamA = -0.5 
+	Skin2.BackParamB = 0.5 
+	Skin2.BackSurface = Enum.SurfaceType.Smooth 
+	Skin2.BackSurfaceInput = Enum.InputType.NoInput 
+	Skin2.BottomParamA = -0.5 
+	Skin2.BottomParamB = 0.5 
+	Skin2.BottomSurface = Enum.SurfaceType.Smooth 
+	Skin2.BottomSurfaceInput = Enum.InputType.NoInput 
+	Skin2.BrickColor = BrickColor.new("Cool yellow") 
+	Skin2.CFrame = CFrame.new(0.2392573356628418, -1.299079418182373, -0.789354681968689)*CFrame.Angles(-0.49999991059303284, 0.8660255074501038, -1.4901159417490817e-08) 
+	Skin2.CanCollide = true 
+	Skin2.CollisionGroupId = "0" 
+	Skin2.Color = Color3.new(0.992157, 0.917647, 0.552941) 
+	Skin2.FrontParamA = -0.5 
+	Skin2.FrontParamB = 0.5 
+	Skin2.FrontSurface = Enum.SurfaceType.Smooth 
+	Skin2.FrontSurfaceInput = Enum.InputType.NoInput 
+	Skin2.LeftParamA = -0.5 
+	Skin2.LeftParamB = 0.5 
+	Skin2.LeftSurface = Enum.SurfaceType.Smooth 
+	Skin2.LeftSurfaceInput = Enum.InputType.NoInput 
+	Skin2.Locked = false 
+	Skin2.Material = Enum.Material.SmoothPlastic 
+	Skin2.Name = "Skin2" 
+	Skin2.Orientation = Vector3.new(60, 90, 10) 
+	Skin2.Parent = asa 
+	Skin2.Position = Vector3.new(0.2392573356628418, -1.299079418182373, -0.789354681968689) 
+	Skin2.Reflectance = 0 
+	Skin2.RightParamA = -0.5 
+	Skin2.RightParamB = 0.5 
+	Skin2.RightSurface = Enum.SurfaceType.Smooth 
+	Skin2.RightSurfaceInput = Enum.InputType.NoInput 
+	Skin2.RotVelocity = Vector3.new(0, 0, 0) 
+	Skin2.Rotation = Vector3.new(90, 30, -80) 
+	Skin2.Shape = Enum.PartType.Block 
+	Skin2.Size = Vector3.new(0.5042506456375122, 0.6063795685768127, 0.9570325613021851) 
+	Skin2.TopParamA = -0.5 
+	Skin2.TopParamB = 0.5 
+	Skin2.TopSurface = Enum.SurfaceType.Smooth 
+	Skin2.TopSurfaceInput = Enum.InputType.NoInput 
+	Skin2.Transparency = 0 
+	Skin2.Velocity = Vector3.new(0, 0, 0) 
+	Skin3.Anchored = false 
+	Skin3.Archivable = true 
+	Skin3.BackParamA = -0.5 
+	Skin3.BackParamB = 0.5 
+	Skin3.BackSurface = Enum.SurfaceType.Smooth 
+	Skin3.BackSurfaceInput = Enum.InputType.NoInput 
+	Skin3.BottomParamA = -0.5 
+	Skin3.BottomParamB = 0.5 
+	Skin3.BottomSurface = Enum.SurfaceType.Smooth 
+	Skin3.BottomSurfaceInput = Enum.InputType.NoInput 
+	Skin3.BrickColor = BrickColor.new("Cool yellow") 
+	Skin3.CFrame = CFrame.new(-0.11623620986938477, -1.299079418182373, -0.789354681968689)*CFrame.Angles(0.5, 0.8660253882408142, -1.4901157641133977e-08) 
+	Skin3.CanCollide = true 
+	Skin3.CollisionGroupId = "0" 
+	Skin3.Color = Color3.new(0.992157, 0.917647, 0.552941) 
+	Skin3.FrontParamA = -0.5 
+	Skin3.FrontParamB = 0.5 
+	Skin3.FrontSurface = Enum.SurfaceType.Smooth 
+	Skin3.FrontSurfaceInput = Enum.InputType.NoInput 
+	Skin3.LeftParamA = -0.5 
+	Skin3.LeftParamB = 0.5 
+	Skin3.LeftSurface = Enum.SurfaceType.Smooth 
+	Skin3.LeftSurfaceInput = Enum.InputType.NoInput 
+	Skin3.Locked = false 
+	Skin3.Material = Enum.Material.SmoothPlastic 
+	Skin3.Name = "Skin3" 
+	Skin3.Orientation = Vector3.new(60, -90, -170) 
+	Skin3.Parent = asa 
+	Skin3.Position = Vector3.new(-0.11623620986938477, -1.299079418182373, -0.789354681968689) 
+	Skin3.Reflectance = 0 
+	Skin3.RightParamA = -0.5 
+	Skin3.RightParamB = 0.5 
+	Skin3.RightSurface = Enum.SurfaceType.Smooth 
+	Skin3.RightSurfaceInput = Enum.InputType.NoInput 
+	Skin3.RotVelocity = Vector3.new(0, 0, 0) 
+	Skin3.Rotation = Vector3.new(90, -30, -80) 
+	Skin3.Shape = Enum.PartType.Block 
+	Skin3.Size = Vector3.new(0.5042506456375122, 0.6063795685768127, 0.9570325613021851) 
+	Skin3.TopParamA = -0.5 
+	Skin3.TopParamB = 0.5 
+	Skin3.TopSurface = Enum.SurfaceType.Smooth 
+	Skin3.TopSurfaceInput = Enum.InputType.NoInput 
+	Skin3.Transparency = 0 
+	Skin3.Velocity = Vector3.new(0, 0, 0) 
+	WeldConstraint.Archivable = true 
+	WeldConstraint.Enabled = true 
+	WeldConstraint.Name = "WeldConstraint" 
+	WeldConstraint.Parent = asa 
+	WeldConstraint.Part0 = Skin 
+	WeldConstraint.Part1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+	WeldConstraint4.Archivable = true 
+	WeldConstraint4.Enabled = true 
+	WeldConstraint4.Name = "WeldConstraint4" 
+	WeldConstraint4.Parent = Part 
+	WeldConstraint4.Part0 = Part 
+	WeldConstraint4.Part1 = Skin 
+	WeldConstraint5.Archivable = true 
+	WeldConstraint5.Enabled = true 
+	WeldConstraint5.Name = "WeldConstraint5" 
+	WeldConstraint5.Parent = Part1 
+	WeldConstraint5.Part0 = Part1 
+	WeldConstraint5.Part1 = Part 
+	WeldConstraint6.Archivable = true 
+	WeldConstraint6.Enabled = true 
+	WeldConstraint6.Name = "WeldConstraint6" 
+	WeldConstraint6.Parent = Skin 
+	WeldConstraint6.Part0 = Skin 
+	WeldConstraint6.Part1 = Skin2 
+	WeldConstraint7.Archivable = true 
+	WeldConstraint7.Enabled = true 
+	WeldConstraint7.Name = "WeldConstraint7" 
+	WeldConstraint7.Parent = Skin 
+	WeldConstraint7.Part0 = Skin 
+	WeldConstraint7.Part1 = Skin3
+end
+
+function resetConfig()
+	config.AN_X_Started = true
+	config.AN_X_Remake_Version = 'v0.8.3-Beta'
+	config.SaveZoneBuilded = false
+	config.SaveZoneCFrame = nil
+	config.InSaveZone = false
+	config.DobleLifeEnabled = false
+	config.EnabledSpawnLocation = false
+	config.InfinintyJumpEnabled = false
+end
+
 local function BuildMain()
 	-- Gui to Lua
 	-- Version: 3.2
 
 	--Variables:
 
-	_G.AN_X_Remake_Version = 'v0.7.3-Beta'
 	local Admins = {
 		game.Players.LocalPlayer.Name
 	}
 	local Prefix = "!"
 	local Players= game:GetService("Players")
 	local Commands = {}
-	local SaveZoneBuilded = false
-	local SaveZoneCFrame = nil
-	local InSaveZone = false
-	local DobleLifeEnabled = false
-	local EnabledSpawnLocation = false
-	local InfinintyJumpEnabled = false
 
 	--Scripts Variables:
 
@@ -317,15 +600,21 @@ local function BuildMain()
 		SaveZonePlate1['TopSurface'] = Enum.SurfaceType.Smooth
 		SaveZonePlate1['Transparency'] = 0
 
-		SaveZoneCFrame = SaveZoneSpawnPosition1.CFrame
-		SaveZoneBuilded = true
+		config.SaveZoneCFrame = SaveZoneSpawnPosition1.CFrame
+		config.SaveZoneBuilded = true
 	end
 
-	task.spawn(function()
-		notify_client('Hello!', 'Thank you for using our script! AN_X Version: '..	_G.AN_X_Remake_Version, 3)
-		task.wait(6)
-		notify_client('About', 'if you encounter problems or bugs while using our script, please contact the developer in the telegram username @OpS_Tadjik', 8)
-	end)
+	if config.AN_X_Started == false then
+		task.spawn(function()
+			notify_client('Hello!', 'Thank you for using our script! AN_X Version: '..	config.AN_X_Remake_Version, 3)
+			task.wait(6)
+			notify_client('About', 'if you encounter problems or bugs while using our script, please contact the developer in the telegram username @OpS_Tadjik', 8)
+			task.wait(3)
+			notify_client('Help', 'Enter !help in the AN_X input line to see all the AN_X commands')
+		end)
+	else
+		notify_client('Restarting...', 'AN_X Has Been Restarted.', 3)
+	end
 
 	Commands.print = function(Sender,Arguments)
 		local Message = table.concat(Arguments," ")
@@ -388,7 +677,7 @@ local function BuildMain()
 
 	Commands.script2life = function(Sender)
 		notify_client('successfully', '2 life Script Has Enabled')
-		DobleLifeEnabled = true
+		config.DobleLifeEnabled = true
 		task.spawn(function()
 			local targetPlayerName = Players.LocalPlayer.Name
 			local invincibleHealth = 1e9
@@ -401,7 +690,7 @@ local function BuildMain()
 			end
 
 			localchar:WaitForChild('Humanoid').HealthChanged:Connect(function()
-				if DobleLifeEnabled == true then
+				if config.DobleLifeEnabled == true then
 					local hum = localchar:WaitForChild('Humanoid')
 					local health = hum.Health
 
@@ -423,7 +712,7 @@ local function BuildMain()
 					local humanoid = character:WaitForChild("Humanoid")
 					humanoid.Health = invincibleHealth
 					humanoid:GetPropertyChangedSignal("Health"):Connect(function()
-						if DobleLifeEnabled == true then
+						if config.DobleLifeEnabled == true then
 							if humanoid.Health < invincibleHealth then
 								humanoid.Health = invincibleHealth
 							end
@@ -432,7 +721,7 @@ local function BuildMain()
 					end)
 				end
 
-				if player.Name == targetPlayerName and DobleLifeEnabled == true then
+				if player.Name == targetPlayerName and config.DobleLifeEnabled == true then
 					player.CharacterAdded:Connect(onCharacterAdded)
 
 					if player.Character then
@@ -442,7 +731,7 @@ local function BuildMain()
 			end
 
 			game.Players.PlayerAdded:Connect(makeInvulnerable)
-			if DobleLifeEnabled == true then
+			if config.DobleLifeEnabled == true then
 				for _, player in ipairs(game.Players:GetPlayers()) do
 					makeInvulnerable(player)
 				end
@@ -494,42 +783,42 @@ local function BuildMain()
 		task.spawn(function()
 			Players.LocalPlayer.Character:WaitForChild('Humanoid').HealthChanged:Connect(function()
 
-				if Players.LocalPlayer.Character.Humanoid.Health <= 15 and InSaveZone == false then
+				if Players.LocalPlayer.Character.Humanoid.Health <= 15 and config.InSaveZone == false then
 					local AnchoredState = Players.LocalPlayer.Character.HumanoidRootPart.Anchored
 
-					if SaveZoneBuilded == false then
+					if config.SaveZoneBuilded == false then
 						BuildSaveZone()
 					end
 
 					repeat
-						Players.LocalPlayer.Character.HumanoidRootPart.CFrame = SaveZoneCFrame
+						Players.LocalPlayer.Character.HumanoidRootPart.CFrame = config.SaveZoneCFrame
 						AnchoredState = true
 						print('repeated')
 
-					until Players.LocalPlayer.Character.HumanoidRootPart.CFrame == SaveZoneCFrame
+					until Players.LocalPlayer.Character.HumanoidRootPart.CFrame == config.SaveZoneCFrame
 
-					InSaveZone = true
+					config.InSaveZone = true
 					AnchoredState = false
 					print('repeat Ended')
 					notify_client('Teleporting...', 'Self Protect It worked. You have less than 20 hp', 5)
 				end
 
-				if Players.LocalPlayer.Character.Humanoid.Health >= 25 and InSaveZone == true then
+				if Players.LocalPlayer.Character.Humanoid.Health >= 25 and config.InSaveZone == true then
 					for i, h in pairs(workspace:GetDescendants()) do
 						if h:IsA('SpawnLocation') then
 							Players.LocalPlayer.Character.HumanoidRootPart.CFrame = h.CFrame
-							EnabledSpawnLocation = true
+							config.EnabledSpawnLocation = true
 							break
 						end
 					end
 
-					if EnabledSpawnLocation == false then
+					if config.EnabledSpawnLocation == false then
 						Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,100,0)
 
 					end
 
-					InSaveZone = false
-					EnabledSpawnLocation = false
+					config.InSaveZone = false
+					config.EnabledSpawnLocation = false
 					print('returning...')
 					
 					notify_client('Returning...', 'You now have more than 25 hp', 5)
@@ -551,27 +840,88 @@ local function BuildMain()
 
 	Commands.infjump = function()
 		local jump = game.Players.LocalPlayer.PlayerGui.TouchGui.TouchControlFrame.JumpButton
-		InfinintyJumpEnabled = not InfinintyJumpEnabled
+		config.InfinintyJumpEnabled = not config.InfinintyJumpEnabled
 		
-		if InfinintyJumpEnabled == true then
+		if config.InfinintyJumpEnabled == true then
 			notify_client('successfully', 'Infininty Jump Enabled')
-		elseif InfinintyJumpEnabled == false then
+		elseif config.InfinintyJumpEnabled == false then
 			notify_client('successfully', 'Infininty Jump Disabled')
 		end
 		
 		UserInput.InputBegan:Connect(function(InputObject)
-			if InputObject.KeyCode == Enum.KeyCode.Space and InfinintyJumpEnabled == true then
+			if InputObject.KeyCode == Enum.KeyCode.Space and config.InfinintyJumpEnabled == true then
 				local Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid") 
 				Humanoid:ChangeState("Jumping") 
 				wait(0.1) 
 				Humanoid:ChangeState("Seated") 
 			end
 			local jumpconnect = jump.MouseButton1Down:Connect(function() 
-				if InfinintyJumpEnabled == true then
+				if config.InfinintyJumpEnabled == true then
 					game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) 
 				end
 			end) 
 		end)
+	end
+	
+	Commands.unload = function(Sender)
+		Frame:Destroy()
+		AN_XGUIREMAKE:Destroy()
+		for i, c in pairs(config) do
+			c = nil
+		end
+		notify_client('Unloaded', 'AN_X Unloaded')
+	end
+	
+	Commands.changeskybox = function(Sender, Arg)
+		local skybox = game.Lighting:FindFirstChildOfClass('Sky')
+		local Id = Arg[1]
+
+		if skybox then
+			local oldskybox = skybox
+			local newskybox = Instance.new('Sky')
+			newskybox.Parent = game.Lighting
+			newskybox.SkyboxBk = "rbxassetid://"..Id
+			newskybox.SkyboxDn = "rbxassetid://"..Id
+			newskybox.SkyboxFt = "rbxassetid://"..Id
+			newskybox.SkyboxLf = "rbxassetid://"..Id
+			newskybox.SkyboxRt = "rbxassetid://"..Id
+			newskybox.SkyboxUp = "rbxassetid://"..Id
+			oldskybox:Destroy()
+			notify_client('ONLY FOR CLIENT', "Due to the fact that injectors can only execute client scripts, other players will not be able to see changes that do not change your character's parameters.", 5)
+		end
+	end
+
+	Commands.buildduck = function(Sender)
+		local buildcframe = Instance.new('Part', workspace)
+		buildcframe.Anchored = true
+		buildcframe.Position = Vector3.new(0,0,0)
+		buildcframe.Orientation = Vector3.new(0,0,0)
+		local startposition = Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		Players.LocalPlayer.Character.HumanoidRootPart.CFrame = buildcframe.CFrame
+		Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+		BuildSusPencil()
+		task.wait(0.1)
+		Players.LocalPlayer.Character.HumanoidRootPart.CFrame = startposition
+		Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+		notify_client('ONLY FOR CLIENT', "Due to the fact that injectors can only execute client scripts, other players will not be able to see changes that do not change your character's parameters.", 5)
+	end
+	
+	Commands.setsuntexture = function(Sender, Arg)
+		local texture = Arg[1]
+		local sun = game.Lighting:FindFirstChildOfClass('Sky')
+		if sun then
+			sun.SunTextureId = 'rbxassetid://'..texture
+			notify_client('ONLY FOR CLIENT', "Due to the fact that injectors can only execute client scripts, other players will not be able to see changes that do not change your character's parameters.", 5)
+		end
+	end
+	
+	Commands.setmoontexture = function(Sender, Arg)
+		local texture = Arg[1]
+		local moon = game.Lighting:FindFirstChildOfClass('Sky')
+		if moon then
+			moon.MoonTextureId = 'rbxassetid://'..texture
+			notify_client('ONLY FOR CLIENT', "Due to the fact that injectors can only execute client scripts, other players will not be able to see changes that do not change your character's parameters.", 5)
+		end
 	end
 
 	local function IsAdmin(Player)
@@ -624,7 +974,8 @@ local function BuildMain()
 	end)
 	
 	warn('Main Code AN_X Remake Builded!')
-
+	config.AN_X_Started = true
+	
 end
 
 BuildMain()
