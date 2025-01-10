@@ -1,6 +1,6 @@
 config = {
 	AN_X_Started = false,
-	AN_X_Remake_Version = 'v0.8.3-Beta',
+	AN_X_Remake_Version = 'v0.8.5-Beta',
 	SaveZoneBuilded = false,
 	SaveZoneCFrame = nil,
 	InSaveZone = false,
@@ -277,9 +277,181 @@ function BuildSusPencil()
 	WeldConstraint7.Part1 = Skin3
 end
 
+function BuildCostomBody()
+	local CustomBody1 = Instance.new("Model") 
+	local LagPart = Instance.new("Part") 
+	local CustomBody = Instance.new("Part") 
+	local CustomHead = Instance.new("Part") 
+	local WeldConstraint2 = Instance.new("WeldConstraint") 
+	local WeldConstraint3 = Instance.new("WeldConstraint") 
+	local WeldConstraint = Instance.new("WeldConstraint") 
+	local Decal = Instance.new("Decal") 
+	CustomBody1.Archivable = true 
+	CustomBody1.Name = "CustomBody1" 
+	CustomBody1.Parent = game.Players.LocalPlayer.Character
+	CustomBody1.PrimaryPart = nil 
+	LagPart.Anchored = false 
+	LagPart.Archivable = true 
+	LagPart.BackParamA = -0.5 
+	LagPart.BackParamB = 0.5 
+	LagPart.BackSurface = Enum.SurfaceType.Smooth 
+	LagPart.BackSurfaceInput = Enum.InputType.NoInput 
+	LagPart.BottomParamA = -0.5 
+	LagPart.BottomParamB = 0.5 
+	LagPart.BottomSurface = Enum.SurfaceType.Smooth 
+	LagPart.BottomSurfaceInput = Enum.InputType.NoInput 
+	LagPart.BrickColor = BrickColor.new("Medium stone grey") 
+	LagPart.CFrame = CFrame.new(-0.0316624641418457, -0.2982483506202698, -2.175319194793701)*CFrame.Angles(-0, -0, -1) 
+	LagPart.CanCollide = true 
+	LagPart.CollisionGroupId = "0" 
+	LagPart.Color = Color3.new(0.639216, 0.635294, 0.647059) 
+	LagPart.FrontParamA = -0.5 
+	LagPart.FrontParamB = 0.5 
+	LagPart.FrontSurface = Enum.SurfaceType.Smooth 
+	LagPart.FrontSurfaceInput = Enum.InputType.NoInput 
+	LagPart.LeftParamA = -0.5 
+	LagPart.LeftParamB = 0.5 
+	LagPart.LeftSurface = Enum.SurfaceType.Smooth 
+	LagPart.LeftSurfaceInput = Enum.InputType.NoInput 
+	LagPart.Locked = false 
+	LagPart.Material = Enum.Material.Plastic 
+	LagPart.Name = "LagPart" 
+	LagPart.Orientation = Vector3.new(0, 0, 0) 
+	LagPart.Parent = CustomBody1 
+	LagPart.Position = Vector3.new(-0.0316624641418457, -0.2982483506202698, -2.175319194793701) 
+	LagPart.Reflectance = 0 
+	LagPart.RightParamA = -0.5 
+	LagPart.RightParamB = 0.5 
+	LagPart.RightSurface = Enum.SurfaceType.Smooth 
+	LagPart.RightSurfaceInput = Enum.InputType.NoInput 
+	LagPart.RotVelocity = Vector3.new(0, 0, 0) 
+	LagPart.Rotation = Vector3.new(0, 0, 0) 
+	LagPart.Shape = Enum.PartType.Block 
+	LagPart.Size = Vector3.new(1.9366748332977295, 1, 5.700000286102295) 
+	LagPart.TopParamA = -0.5 
+	LagPart.TopParamB = 0.5 
+	LagPart.TopSurface = Enum.SurfaceType.Smooth 
+	LagPart.TopSurfaceInput = Enum.InputType.NoInput 
+	LagPart.Transparency = 1 
+	LagPart.Velocity = Vector3.new(0, 0, 0) 
+	CustomBody.Anchored = false 
+	CustomBody.Archivable = true 
+	CustomBody.BackParamA = -0.5 
+	CustomBody.BackParamB = 0.5 
+	CustomBody.BackSurface = Enum.SurfaceType.Smooth 
+	CustomBody.BackSurfaceInput = Enum.InputType.NoInput 
+	CustomBody.BottomParamA = -0.5 
+	CustomBody.BottomParamB = 0.5 
+	CustomBody.BottomSurface = Enum.SurfaceType.Smooth 
+	CustomBody.BottomSurfaceInput = Enum.InputType.NoInput 
+	CustomBody.BrickColor = BrickColor.new("Medium stone grey") 
+	CustomBody.CFrame = CFrame.new(-0.010620713233947754, -0.8867800831794739, -0.19822347164154053)*CFrame.Angles(-0, -0, -1) 
+	CustomBody.CanCollide = true 
+	CustomBody.CollisionGroupId = "0" 
+	CustomBody.Color = Color3.new(0.639216, 0.635294, 0.647059) 
+	CustomBody.FrontParamA = -0.5 
+	CustomBody.FrontParamB = 0.5 
+	CustomBody.FrontSurface = Enum.SurfaceType.Smooth 
+	CustomBody.FrontSurfaceInput = Enum.InputType.NoInput 
+	CustomBody.LeftParamA = -0.5 
+	CustomBody.LeftParamB = 0.5 
+	CustomBody.LeftSurface = Enum.SurfaceType.Smooth 
+	CustomBody.LeftSurfaceInput = Enum.InputType.NoInput 
+	CustomBody.Locked = false 
+	CustomBody.Material = Enum.Material.Plastic 
+	CustomBody.Name = "CustomBody" 
+	CustomBody.Orientation = Vector3.new(0, 0, 0) 
+	CustomBody.Parent = CustomBody1 
+	CustomBody.Position = Vector3.new(-0.010620713233947754, -0.8867800831794739, -0.19822347164154053) 
+	CustomBody.Reflectance = 0 
+	CustomBody.RightParamA = -0.5 
+	CustomBody.RightParamB = 0.5 
+	CustomBody.RightSurface = Enum.SurfaceType.Smooth 
+	CustomBody.RightSurfaceInput = Enum.InputType.NoInput 
+	CustomBody.RotVelocity = Vector3.new(0, 0, 0) 
+	CustomBody.Rotation = Vector3.new(0, 0, 0) 
+	CustomBody.Shape = Enum.PartType.Block 
+	CustomBody.Size = Vector3.new(4.832732200622559, 4.125604152679443, 2.3868863582611084) 
+	CustomBody.TopParamA = -0.5 
+	CustomBody.TopParamB = 0.5 
+	CustomBody.TopSurface = Enum.SurfaceType.Smooth 
+	CustomBody.TopSurfaceInput = Enum.InputType.NoInput 
+	CustomBody.Transparency = 0 
+	CustomBody.Velocity = Vector3.new(0, 0, 0) 
+	CustomHead.Anchored = false 
+	CustomHead.Archivable = true 
+	CustomHead.BackParamA = -0.5 
+	CustomHead.BackParamB = 0.5 
+	CustomHead.BackSurface = Enum.SurfaceType.Smooth 
+	CustomHead.BackSurfaceInput = Enum.InputType.NoInput 
+	CustomHead.BottomParamA = -0.5 
+	CustomHead.BottomParamB = 0.5 
+	CustomHead.BottomSurface = Enum.SurfaceType.Smooth 
+	CustomHead.BottomSurfaceInput = Enum.InputType.NoInput 
+	CustomHead.BrickColor = BrickColor.new("Medium stone grey") 
+	CustomHead.CFrame = CFrame.new(-0.010620713233947754, 1.9265217781066895, -0.19822347164154053)*CFrame.Angles(-0, -0, -1) 
+	CustomHead.CanCollide = true 
+	CustomHead.CollisionGroupId = "0" 
+	CustomHead.Color = Color3.new(0.639216, 0.635294, 0.647059) 
+	CustomHead.FrontParamA = -0.5 
+	CustomHead.FrontParamB = 0.5 
+	CustomHead.FrontSurface = Enum.SurfaceType.Smooth 
+	CustomHead.FrontSurfaceInput = Enum.InputType.NoInput 
+	CustomHead.LeftParamA = -0.5 
+	CustomHead.LeftParamB = 0.5 
+	CustomHead.LeftSurface = Enum.SurfaceType.Smooth 
+	CustomHead.LeftSurfaceInput = Enum.InputType.NoInput 
+	CustomHead.Locked = false 
+	CustomHead.Material = Enum.Material.Plastic 
+	CustomHead.Name = "CustomHead" 
+	CustomHead.Orientation = Vector3.new(0, 0, 0) 
+	CustomHead.Parent = CustomBody1 
+	CustomHead.Position = Vector3.new(-0.010620713233947754, 1.9265217781066895, -0.19822347164154053) 
+	CustomHead.Reflectance = 0 
+	CustomHead.RightParamA = -0.5 
+	CustomHead.RightParamB = 0.5 
+	CustomHead.RightSurface = Enum.SurfaceType.Smooth 
+	CustomHead.RightSurfaceInput = Enum.InputType.NoInput 
+	CustomHead.RotVelocity = Vector3.new(0, 0, 0) 
+	CustomHead.Rotation = Vector3.new(0, 0, 0) 
+	CustomHead.Shape = Enum.PartType.Block 
+	CustomHead.Size = Vector3.new(4.832732200622559, 1.5010002851486206, 2.3868863582611084) 
+	CustomHead.TopParamA = -0.5 
+	CustomHead.TopParamB = 0.5 
+	CustomHead.TopSurface = Enum.SurfaceType.Smooth 
+	CustomHead.TopSurfaceInput = Enum.InputType.NoInput 
+	CustomHead.Transparency = 0 
+	CustomHead.Velocity = Vector3.new(0, 0, 0) 
+	WeldConstraint2.Archivable = true 
+	WeldConstraint2.Enabled = true 
+	WeldConstraint2.Name = "WeldConstraint2" 
+	WeldConstraint2.Parent = CustomBody 
+	WeldConstraint2.Part0 = CustomBody 
+	WeldConstraint2.Part1 = CustomHead 
+	WeldConstraint3.Archivable = true 
+	WeldConstraint3.Enabled = true 
+	WeldConstraint3.Name = "WeldConstraint3" 
+	WeldConstraint3.Parent = CustomBody 
+	WeldConstraint3.Part0 = CustomBody 
+	WeldConstraint3.Part1 = LagPart 
+	WeldConstraint.Archivable = true 
+	WeldConstraint.Enabled = true 
+	WeldConstraint.Name = "WeldConstraint" 
+	WeldConstraint.Parent = CustomBody 
+	WeldConstraint.Part0 = CustomBody 
+	WeldConstraint.Part1 = game.Players.LocalPlayer.Character.HumanoidRootPart 
+	Decal.Archivable = true 
+	Decal.Color3 = Color3.new(1, 1, 1) 
+	Decal.Face = Enum.NormalId.Front 
+	Decal.Name = "Decal" 
+	Decal.Parent = CustomHead 
+	Decal.Texture = "http://www.roblox.com/asset/?id=9180622665" 
+	Decal.Transparency = 0
+end
+
 function resetConfig()
 	config.AN_X_Started = true
-	config.AN_X_Remake_Version = 'v0.8.3-Beta'
+	config.AN_X_Remake_Version = 'v0.8.5-Beta'
 	config.SaveZoneBuilded = false
 	config.SaveZoneCFrame = nil
 	config.InSaveZone = false
@@ -903,6 +1075,7 @@ local function BuildMain()
 		task.wait(0.1)
 		Players.LocalPlayer.Character.HumanoidRootPart.CFrame = startposition
 		Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+		buildcframe:Destroy()
 		notify_client('ONLY FOR CLIENT', "Due to the fact that injectors can only execute client scripts, other players will not be able to see changes that do not change your character's parameters.", 5)
 	end
 	
@@ -922,6 +1095,28 @@ local function BuildMain()
 			moon.MoonTextureId = 'rbxassetid://'..texture
 			notify_client('ONLY FOR CLIENT', "Due to the fact that injectors can only execute client scripts, other players will not be able to see changes that do not change your character's parameters.", 5)
 		end
+	end
+	
+	Commands.lol = function(Sender)
+		local buildcframe = Instance.new('Part', workspace)
+		buildcframe.Anchored = true
+		buildcframe.Position = Vector3.new(0,0,0)
+		buildcframe.Orientation = Vector3.new(0,0,0)
+		local startposition = Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		Players.LocalPlayer.Character.HumanoidRootPart.CFrame = buildcframe.CFrame
+		Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+		for i, bp in pairs(Players.LocalPlayer.Character:GetChildren()) do
+			if bp:IsA('Part') or bp:IsA('MeshPart') then
+				bp.Transparency = 1
+			end
+		end
+		BuildCostomBody()
+
+		task.wait(0.1)
+		Players.LocalPlayer.Character.HumanoidRootPart.CFrame = startposition
+		Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+		buildcframe:Destroy()
+		notify_client('ONLY FOR CLIENT', "Due to the fact that injectors can only execute client scripts, other players will not be able to see changes that do not change your character's parameters.", 5)
 	end
 
 	local function IsAdmin(Player)
