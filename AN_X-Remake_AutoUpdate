@@ -1,13 +1,59 @@
 config = {
 	AN_X_Started = false,
-	AN_X_Remake_Version = 'v0.8.5-Beta',
+	AN_X_Remake_Version = 'v0.8.8-Beta',
 	SaveZoneBuilded = false,
 	SaveZoneCFrame = nil,
 	InSaveZone = false,
 	DobleLifeEnabled = false,
 	EnabledSpawnLocation = false,
 	InfinintyJumpEnabled = false,
+	ExecutorAPI_Enabled = true,
+	VelocityWalk_Enabled = false,
 }
+
+function GetExecutorAPI()
+	local function APIHandler()
+		config.ExecutorAPI_Enabled = false
+	end
+	local function Test()
+		setclipboard("Delete this from your clipboard")
+	end
+	xpcall(Test, APIHandler)
+end
+
+GetExecutorAPI()
+
+function notify_client(notify_title, notify_content, notify_lifetime)
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = notify_title, -- Required
+		Text = notify_content, -- Required
+		--Icon = "rbxassetid://1234567890" -- Optional
+		Duration = notify_lifetime
+	})
+	--[[	title_n.Text = notify_title
+		TextLabel_n.Text = notify_content
+
+		local tweenInfo = TweenInfo.new(1)
+		local guiInstance = notify
+
+		local xScaleSize = 0.51 -- modify this until the notification opens up to your taste. From 0 to 1.
+		local yScalePosition = 0.67 -- modify this to your taste. From 0 to 1.
+
+		local openGoal = {Position = UDim2.fromScale(xScaleSize, yScalePosition)} -- fromScale since we're only using scales.
+		local closedGoal = {Position = UDim2.fromScale(1, yScalePosition)}
+
+		local openTween = tweens:Create(guiInstance, tweenInfo, openGoal)
+		local closeTween = tweens:Create(guiInstance, tweenInfo, closedGoal)
+		notify.Visible = true
+		openTween:Play()
+		task.spawn(function()
+			task.wait(notify_lifetime) -- better than using wait()
+			closeTween:Play()
+			closeTween.Completed:Connect(function()
+				notify.Visible = false -- technically, no longer needed, but you may keep it if you wish.
+			end)
+		end)	--]]	
+end
 
 function BuildSusPencil()
 	local asa = Instance.new("Model") 
@@ -362,7 +408,7 @@ function BuildCostomBody()
 	CustomBody.Name = "CustomBody" 
 	CustomBody.Orientation = Vector3.new(0, 0, 0) 
 	CustomBody.Parent = CustomBody1 
-	CustomBody.Position = Vector3.new(-0.010620713233947754, -0.8867800831794739, -0.19822347164154053) 
+	CustomBody.Position = Vector3.new(-0.011, -0.729, -0.198) 
 	CustomBody.Reflectance = 0 
 	CustomBody.RightParamA = -0.5 
 	CustomBody.RightParamB = 0.5 
@@ -371,7 +417,7 @@ function BuildCostomBody()
 	CustomBody.RotVelocity = Vector3.new(0, 0, 0) 
 	CustomBody.Rotation = Vector3.new(0, 0, 0) 
 	CustomBody.Shape = Enum.PartType.Block 
-	CustomBody.Size = Vector3.new(4.832732200622559, 4.125604152679443, 2.3868863582611084) 
+	CustomBody.Size = Vector3.new(4.833, 3.811, 2.387) 
 	CustomBody.TopParamA = -0.5 
 	CustomBody.TopParamB = 0.5 
 	CustomBody.TopSurface = Enum.SurfaceType.Smooth 
@@ -451,13 +497,14 @@ end
 
 function resetConfig()
 	config.AN_X_Started = true
-	config.AN_X_Remake_Version = 'v0.8.5-Beta'
+	config.AN_X_Remake_Version = 'v0.8.8-Beta'
 	config.SaveZoneBuilded = false
 	config.SaveZoneCFrame = nil
 	config.InSaveZone = false
 	config.DobleLifeEnabled = false
 	config.EnabledSpawnLocation = false
 	config.InfinintyJumpEnabled = false
+	GetExecutorAPI()
 end
 
 local function BuildMain()
@@ -480,7 +527,7 @@ local function BuildMain()
 	local C=P.Character or P.CharacterAdded:Wait()
 	A.AnimationId='rbxassetid://148840371'
 	local H=C:WaitForChild'Humanoid':LoadAnimation(A)
-	local fuckEnabled = false
+	local bangEnabled = false
 
 	-- Instances:
 
@@ -511,7 +558,11 @@ local function BuildMain()
 	--Properties:
 
 	AN_XGUIREMAKE.Name = "AN_X-GUI [REMAKE]"
-	AN_XGUIREMAKE.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	if config.ExecutorAPI_Enabled == true then
+		AN_XGUIREMAKE.Parent = game.CoreGui
+	else
+		AN_XGUIREMAKE.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	end
 	AN_XGUIREMAKE.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	AN_XGUIREMAKE.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
 
@@ -669,38 +720,12 @@ local function BuildMain()
 
 	--Functions:
 
-	local function notify_client(notify_title, notify_content, notify_lifetime)
-		game:GetService("StarterGui"):SetCore("SendNotification",{
-			Title = notify_title, -- Required
-			Text = notify_content, -- Required
-			--Icon = "rbxassetid://1234567890" -- Optional
-			Duration = notify_lifetime
-		})
-	--[[	title_n.Text = notify_title
-		TextLabel_n.Text = notify_content
 
-		local tweenInfo = TweenInfo.new(1)
-		local guiInstance = notify
-
-		local xScaleSize = 0.51 -- modify this until the notification opens up to your taste. From 0 to 1.
-		local yScalePosition = 0.67 -- modify this to your taste. From 0 to 1.
-
-		local openGoal = {Position = UDim2.fromScale(xScaleSize, yScalePosition)} -- fromScale since we're only using scales.
-		local closedGoal = {Position = UDim2.fromScale(1, yScalePosition)}
-
-		local openTween = tweens:Create(guiInstance, tweenInfo, openGoal)
-		local closeTween = tweens:Create(guiInstance, tweenInfo, closedGoal)
-		notify.Visible = true
-		openTween:Play()
-		task.spawn(function()
-			task.wait(notify_lifetime) -- better than using wait()
-			closeTween:Play()
-			closeTween.Completed:Connect(function()
-				notify.Visible = false -- technically, no longer needed, but you may keep it if you wish.
-			end)
-		end)	--]]	
+	
+	if config.ExecutorAPI_Enabled == false then
+		notify_client('Executor API Warning', 'The use of the Executor API is disabled to prevent errors during studio testing.', 5)
 	end
-
+	
 	local function BuildSaveZone()
 		local RandomName = math.random(1,9999999)
 		local RandomName2 = math.random(1,9999999)
@@ -809,21 +834,21 @@ local function BuildMain()
 		notify_client('Enabled', 'Playing Animation: '.. new.AnimationId..' ...', 5)
 	end
 
-	Commands.fuck = function(r, Arg)
+	Commands.bang = function(r, Arg)
 		task.spawn(function()
-			fuckEnabled = true
+			bangEnabled = true
 			local Victim=Arg[1]
 			H:Play()
 			H:AdjustSpeed(Arg[2])
 			game:GetService'RunService'.RenderStepped:Wait()
-			if fuckEnabled == true then
+			if bangEnabled == true then
 				C:WaitForChild'HumanoidRootPart'.CFrame=CFrame.new(game:GetService'Players':FindFirstChild(Victim).Character:WaitForChild'HumanoidRootPart'.Position)
 			end
 		end)
 	end
 
-	Commands.stopfuck = function()
-		fuckEnabled = false
+	Commands.stopbang = function()
+		bangEnabled = false
 		H:Stop()
 	end
 
@@ -1118,6 +1143,55 @@ local function BuildMain()
 		buildcframe:Destroy()
 		notify_client('ONLY FOR CLIENT', "Due to the fact that injectors can only execute client scripts, other players will not be able to see changes that do not change your character's parameters.", 5)
 	end
+	
+	Commands.velocitywalk = function(Sender, Arg)
+		config.VelocityWalk_Enabled = not config.VelocityWalk_Enabled
+		local velocity
+		local speed
+		if config.VelocityWalk_Enabled == true then
+			velocity = Instance.new('BodyVelocity', Players.LocalPlayer.Character.HumanoidRootPart)
+			if Arg[1] ~= nil then
+				speed = Arg[1]
+				print(speed)
+			else
+				speed = 20
+				print(speed)
+			end
+		end
+		UserInput.InputBegan:Connect(function(Input, gpe)
+			if gpe == false and config.VelocityWalk_Enabled == true and velocity ~= nil then
+				if Input.KeyCode == Enum.KeyCode.W or Input.KeyCode == Enum.KeyCode.S or Input.KeyCode == Enum.KeyCode.A or Input.KeyCode == Enum.KeyCode.D then
+					velocity.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+					velocity.Velocity = Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector * speed
+				end
+			end
+		end)
+		UserInput.InputChanged:Connect(function(Input, gpe)
+			if gpe == false and config.VelocityWalk_Enabled == true and velocity ~= nil then
+				if Input.KeyCode == Enum.KeyCode.W or Input.KeyCode == Enum.KeyCode.S or Input.KeyCode == Enum.KeyCode.A or Input.KeyCode == Enum.KeyCode.D then
+					velocity.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+					velocity.Velocity = Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector * speed
+				end
+			end
+		end)
+		UserInput.InputEnded:Connect(function()
+			if velocity ~= nil then
+				velocity.MaxForce = Vector3.new(0,0,0)
+			end
+		end)
+		if config.VelocityWalk_Enabled == true then
+			notify_client('successfully', 'Velocity Walk Enabled')
+			if UserInput.KeyboardEnabled == false then
+				notify_client('Warning', 'This command is intended for use with a keyboard only.')
+			end
+		else
+			notify_client('successfully', 'Velocity Walk Disabled')
+			if velocity ~= nil then
+				velocity.MaxForce = Vector3.new(0,0,0)
+				velocity:Destroy()
+			end
+		end
+	end
 
 	local function IsAdmin(Player)
 		for _,Admin in pairs (Admins) do
@@ -1178,3 +1252,10 @@ BuildMain()
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 	BuildMain()
 end)
+
+if config.ExecutorAPI_Enabled == true then
+	setclipboard("@OpS_Tadjik")
+	notify_client('Clipboard', 'Developer Contact telegram username added to your Clipboard', 5)
+end
+
+notify_client('Warning Beta', 'This is a beta version of this script, so some functions may not be optimized or may not work well.', 5)
