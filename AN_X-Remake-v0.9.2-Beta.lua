@@ -1358,7 +1358,7 @@ function CheckAN_XDebugconsoleEnabled()
 	if d == nil then
 		warn('Debug not found')
 		if config.ExecutorAPI_Enabled == true and Bootconfig.BootAN_XDebugConsole == true then
-			loadstring(game:HttpGet(''))
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/Resources64Hub/Lua/refs/heads/AN_X-Remake-Roblox/AN_X-Debug-Console-v1.lua'), true)()
 		end
 	else
 		config.AN_XDebugConsoleEnabled = true
