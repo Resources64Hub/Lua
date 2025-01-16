@@ -1,6 +1,7 @@
 config = {
 	AN_X_Started = false,
-	AN_X_Remake_Version = 'v0.8.8-Beta',
+	AN_X_Remake_Version = 'v0.9.2-Beta',
+	GlobalAN_XGUI = nil,
 	SaveZoneBuilded = false,
 	SaveZoneCFrame = nil,
 	InSaveZone = false,
@@ -9,7 +10,16 @@ config = {
 	InfinintyJumpEnabled = false,
 	ExecutorAPI_Enabled = true,
 	VelocityWalk_Enabled = false,
+	AN_XDebugConsoleEnabled = false,
+	PCUser = false,
+	Orbit = false
 }
+
+Bootconfig = {
+	BootAN_XDebugConsole = true
+}
+-- Boot Services
+local UserInput = game:GetService('UserInputService')
 
 function GetExecutorAPI()
 	local function APIHandler()
@@ -23,13 +33,23 @@ end
 
 GetExecutorAPI()
 
+function CheckPCUser()
+	if UserInput.KeyboardEnabled == true and UserInput.MouseEnabled == true then
+		config.PCUser = true
+	end
+end
+
+CheckPCUser()
+
 function notify_client(notify_title, notify_content, notify_lifetime)
-	game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = notify_title, -- Required
-		Text = notify_content, -- Required
-		--Icon = "rbxassetid://1234567890" -- Optional
-		Duration = notify_lifetime
-	})
+	pcall(function()
+		game:GetService("StarterGui"):SetCore("SendNotification",{
+			Title = notify_title, -- Required
+			Text = notify_content, -- Required
+			--Icon = "rbxassetid://1234567890" -- Optional
+			Duration = notify_lifetime
+		})
+	end)
 	--[[	title_n.Text = notify_title
 		TextLabel_n.Text = notify_content
 
@@ -497,13 +517,15 @@ end
 
 function resetConfig()
 	config.AN_X_Started = true
-	config.AN_X_Remake_Version = 'v0.8.8-Beta'
+	config.AN_X_Remake_Version = 'v0.9.2-Beta'
 	config.SaveZoneBuilded = false
 	config.SaveZoneCFrame = nil
 	config.InSaveZone = false
 	config.DobleLifeEnabled = false
 	config.EnabledSpawnLocation = false
 	config.InfinintyJumpEnabled = false
+	config.Orbit = false
+	CheckPCUser()
 	GetExecutorAPI()
 end
 
@@ -551,7 +573,6 @@ local function BuildMain()
 	--Services:
 
 	local tweens = game:GetService('TweenService')
-	local UserInput = game:GetService('UserInputService')
 	local ContentProvider = game:GetService('ContentProvider')
 	ContentProvider:PreloadAsync({script})
 
@@ -565,6 +586,9 @@ local function BuildMain()
 	end
 	AN_XGUIREMAKE.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	AN_XGUIREMAKE.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
+	AN_XGUIREMAKE.ResetOnSpawn = false
+	config.GlobalAN_XGUI = AN_XGUIREMAKE
+	
 
 	Frame.Parent = AN_XGUIREMAKE
 	Frame.BackgroundColor3 = Color3.fromRGB(156, 156, 156)
@@ -1192,6 +1216,79 @@ local function BuildMain()
 			end
 		end
 	end
+	
+	Commands.orbitplayer = function(Sender, Arg)
+		local function FindPlayer()
+			for _, Player in pairs(game.Players:GetPlayers()) do
+				if string.lower(Player.Name) == Arg[1] then
+					return Player
+				end
+			end
+		end
+		config.Orbit = true
+		task.spawn(function()
+		local speed = 5
+		local reference = .01
+		local radius = 5
+		if Arg[2] ~= nil then
+			speed = Arg[2]
+		else
+			notify_client('Error', 'Invalid Speed Number')
+			error('Invalid Radius Number')
+		end
+		if Arg[3] ~= nil then
+			radius = Arg[3]
+		else
+			notify_client('Error', 'Invalid Radius Number')
+			error('Invalid Radius Number')
+		end
+		local a = reference * speed
+		print(a)
+		local char = FindPlayer().Character
+		local part
+		if Players.LocalPlayer.Character.Humanoid == Enum.RigType.R15 then
+			part = Players.LocalPlayer.Character.LowerTorso
+		else
+			part = Players.LocalPlayer.Character.Torso
+		end
+
+		local d = Players.LocalPlayer.Character.HumanoidRootPart
+		local runservice = game:GetService('RunService')
+
+		wait(1)
+		if config.Orbit then
+		while true do
+			task.wait(.01)
+			local angle = 0
+			local initialPosition = char.PrimaryPart.Position + Vector3.new(radius * math.cos(angle), 0, radius * math.sin(angle))
+			part.Position = initialPosition
+			d.Position = initialPosition
+			while true do
+				task.wait(0.001)
+				angle = angle + a
+				local newPosition = char.PrimaryPart.Position + Vector3.new(radius * math.cos(angle), 0, radius * math.sin(angle))
+				local newCFrame = CFrame.new(newPosition)
+				part.CFrame = newCFrame
+				d.CFrame = newCFrame
+
+				local aimTweenInfo = TweenInfo.new(0.01, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+				local lookAt = CFrame.lookAt(part.Position, char.HumanoidRootPart.Position)
+				local aimTween = game:GetService("TweenService"):Create(part, aimTweenInfo, {["CFrame"] = lookAt})
+				aimTween:Play()
+				local aimTween2 = game:GetService("TweenService"):Create(d, aimTweenInfo, {["CFrame"] = lookAt})
+				aimTween2:Play()
+			end
+		end
+		else
+			error('орбита пошла нахуй')
+		end
+
+	end)
+	end
+	
+	Commands.disableorbit = function()
+		config.Orbit = false
+	end
 
 	local function IsAdmin(Player)
 		for _,Admin in pairs (Admins) do
@@ -1249,9 +1346,40 @@ end
 
 BuildMain()
 
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
-	BuildMain()
-end)
+function CheckAN_XDebugconsoleEnabled()
+	local trycount = 10
+	if config.PCUser == false then
+		trycount = 25
+	end
+	repeat
+		trycount -= 1
+	task.wait(0.1)
+	local d = game:GetService('ReplicatedStorage'):FindFirstChild('AN_X__DebugConsoleAssets')
+	if d == nil then
+		warn('Debug not found')
+		if config.ExecutorAPI_Enabled == true and Bootconfig.BootAN_XDebugConsole == true then
+			loadstring(game:HttpGet(''))
+		end
+	else
+		config.AN_XDebugConsoleEnabled = true
+		d:WaitForChild('Connect'):Fire(config.GlobalAN_XGUI, script)
+		notify_client('Debug Console', 'Debug Console Connected to AN_X. you can open Debug console on F4', 5)
+	end
+	if trycount == 0 then
+		break
+	end
+	until config.AN_XDebugConsoleEnabled == true
+	if trycount == 0 then
+		return false
+	end
+end
+
+local sucsess = CheckAN_XDebugconsoleEnabled()
+
+if sucsess == false then
+	notify_client('Something went wrong.', '...', 5)
+end
+
 
 if config.ExecutorAPI_Enabled == true then
 	setclipboard("@OpS_Tadjik")
