@@ -1,8 +1,10 @@
 local module = {
 
-	TeleportPart:Part = nil
+	TeleportPart = nil
 	
 }
+
+print("Loading Build Module...")
 
 local Builda:Model = nil
 
@@ -3598,5 +3600,7 @@ function module:LoadBuild()
 	Builda.Parent = game.Workspace
 	
 end
+
+print("Build Module Loaded.")
 
 return module
