@@ -1,6 +1,7 @@
 print("Loading Animation Module...")
 local root = {
-	ID = 0;
+	am = {
+ID = 0;
 	Type = "KeyframeSequence";
 	Properties = {
 		Name = "Untitled";
@@ -651,6 +652,8 @@ local root = {
 			};
 		};
 	};
+	}
+	
 };
 
 print("Animation Module Loaded.")
