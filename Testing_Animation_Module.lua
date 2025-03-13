@@ -1,4 +1,4 @@
-
+print("Loading Animation Module...")
 local root = {
 	ID = 0;
 	Type = "KeyframeSequence";
@@ -652,5 +652,7 @@ local root = {
 		};
 	};
 };
+
+print("Animation Module Loaded.")
 
 return root
