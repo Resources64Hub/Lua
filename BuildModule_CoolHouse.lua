@@ -1,4 +1,8 @@
-local module = {}
+local module = {
+
+	TeleportPart:Part = nil
+	
+}
 
 local Builda:Model = nil
 
@@ -18,6 +22,7 @@ function module:Build()
 	SpawnPart['Orientation'] = Vector3.new(0, 26.64, -90)
 	SpawnPart['Parent'] = CoolHouse
 	SpawnPart['Material'] = Enum.Material.SmoothPlastic
+	module.TeleportPart = SpawnPart
 	
 	local Part2 = Instance.new('Part', CoolHouse)
 	Part2.Name = 'Part2'
